@@ -1,0 +1,46 @@
+// Responsive breakpoints mixin
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// Flex center mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Typography mixins
+@mixin font-size($size) {
+  @if map-has-key($font-sizes, $size) {
+    font-size: map-get($font-sizes, $size);
+  }
+}
+
+@mixin font-weight($weight) {
+  @if map-has-key($font-weights, $weight) {
+    font-weight: map-get($font-weights, $weight);
+  }
+}
+
+// Button styles mixin
+@mixin button-variant($bg-color, $text-color, $hover-darken: 10%) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  
+  &:hover {
+    background-color: darken($bg-color, $hover-darken);
+  }
+}
+
+// Card mixin
+@mixin card-shadow {
+  box-shadow: $shadow-sm;
+  background-color: $white;
+  border-radius: 5px;
+}

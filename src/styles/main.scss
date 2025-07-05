@@ -1,0 +1,100 @@
+// Import Google Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+
+// Import our partials first (before Bootstrap)
+@import 'variables';
+@import 'mixins';
+
+// Import Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Import remaining partials
+@import 'buttons';
+@import 'components';
+
+// Global styles
+body {
+  background-color: $background-color !important;
+  font-family: $font-family-base;
+}
+
+.App {
+  text-align: center;
+  
+  header {
+    background-color: $white;
+    
+    button {
+      color: $secondary-color;
+      margin-right: 0;
+      
+      svg {
+        color: $secondary-color;
+      }
+    }
+  }
+  
+  h3 {
+    @include font-size(lg);
+    @include font-weight(bold);
+    line-height: 1.36;
+    color: $secondary-color;
+    margin-bottom: $spacer * 2;
+  }
+}
+
+// Modal styles
+.new-task-modal {
+  .modal-header {
+    border-bottom: none;
+  }
+  
+  .modal-body {
+    .custom-textarea {
+      resize: vertical;
+      min-height: 156px;
+      max-height: 156px;
+      width: 100%;
+    }
+  }
+  
+  .modal-footer {
+    border-top: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    button {
+      flex: 1;
+      margin: 0 $spacer * 0.625;
+    }
+  }
+}
+
+// Pagination styles
+.pagination {
+  .page-item {
+    .page-link {
+      color: $secondary-color;
+      background-color: $white;
+      border: 1px solid $light-gray;
+      
+      &:hover {
+        background-color: $light-gray;
+        border-color: $secondary-color;
+      }
+    }
+    
+    &.active .page-link {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+      color: $white;
+    }
+    
+    &.disabled .page-link {
+      color: $muted-color;
+      background-color: $white;
+      border-color: $light-gray;
+    }
+  }
+}

@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/main.scss';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Header from './layouts/Header';
+import { 
+  DataPage, 
+  TasksPage, 
+  ReturnsPage, 
+  CommunicationsPage, 
+  BestFriendsPage 
+} from './pages';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Navigate to="/datos" />} />
+          <Route path="/datos" element={<DataPage />} />
+          <Route path="/tareas" element={<TasksPage />} />
+          <Route path="/devoluciones" element={<ReturnsPage />} />
+          <Route path="/comunicaciones" element={<CommunicationsPage />} />
+          <Route path="/mejores-amigos" element={<BestFriendsPage />} />
+       </Routes>
     </div>
   );
 }
 
 export default App;
+

@@ -1,0 +1,153 @@
+@import 'variables';
+@import 'mixins';
+
+.wrapper-component {
+  padding: $spacer * 4 $spacer * 2 $spacer * 2;
+
+  @include respond-to(md) {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .card {
+    @include card-shadow;
+    margin-bottom: $spacer * 2;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-body {
+      .item-title {
+        display: flex;
+        justify-content: flex-start;
+        font-family: $font-family-base;
+        @include font-weight(semibold);
+        text-transform: capitalize;
+        @include font-size(base);
+        line-height: 1.36;
+        color: $text-primary;
+      }
+
+      .item-description {
+        display: flex;
+        text-align: start;
+        font-family: $font-family-base;
+        @include font-weight(regular);
+        @include font-size(xs);
+        line-height: 1.36;
+        color: $text-secondary;
+      }
+    }
+  }
+
+  .input-name {
+    @include font-size(sm);
+  }
+
+  // Form label alignment
+  .form-label {
+    text-align: left;
+    display: block;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+// --- HorizontalMenu custom styles ---
+.horizontal-menu {
+  background: #fff;
+  width: 100%;
+  box-shadow: $shadow-md;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: $spacer * 2;
+
+  &__tabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    min-height: 55px;
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  &__tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__tab {
+    margin: 0 0.2rem;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    flex: 0 0 auto;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 0.9rem;
+    font-family: $font-family-base;
+    @include font-size(base);
+    @include font-weight(semibold);
+    color: $secondary-color;
+    background: transparent;
+    border: none;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: color 0.2s;
+    cursor: pointer;
+    white-space: nowrap;
+
+    // Animated underline
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 3px;
+      background: $primary-color;
+      border-radius: 2px 2px 0 0;
+      transform: scaleX(0);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+  }
+
+  &__link--active {
+    color: $primary-color;
+    background: #fff;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__tabs {
+      justify-content: flex-start;
+      padding-left: 0.5rem;
+      min-height: 48px;
+    }
+
+    &__tab {
+      height: 48px;
+    }
+
+    &__link {
+      padding: 0 0.7rem;
+      font-size: 0.97rem;
+    }
+  }
+}
