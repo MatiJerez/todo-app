@@ -1,6 +1,6 @@
 import React from 'react';
-import { Task } from '../../types/task.types';
-import { DeleteButton } from './atoms';
+import { Task } from '../../../types/task.types';
+import { DeleteButton } from '../atoms';
 
 interface TaskItemProps {
   task: Task;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Task } from '../../types/task.types';
-import { TaskItem } from './TaskItem';
+import { Task } from '../../../types/task.types';
+import { TaskItem } from '../molecules';
 
 interface TaskListProps {
   tasks: Task[];

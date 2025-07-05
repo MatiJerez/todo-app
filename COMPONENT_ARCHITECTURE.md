@@ -6,8 +6,9 @@
 src/
 ├── components/
 │   ├── business/          # Componentes específicos del negocio
-│   │   ├── Tasks.tsx      # Lógica de tareas
-│   │   └── index.ts       # Barrel exports
+│   │   ├── TasksManager.tsx    # Lógica de gestión de tareas
+│   │   ├── NewTaskModal.tsx    # Modal para crear nuevas tareas
+│   │   └── index.ts            # Barrel exports
 │   └── ui/                # Componentes de interfaz reutilizables
 │       ├── atoms/         # Componentes básicos indivisibles
 │       │   ├── Logo.tsx
@@ -19,10 +20,13 @@ src/
 │       │   └── index.ts
 │       ├── molecules/     # Componentes compuestos por atoms
 │       │   ├── HorizontalMenu.tsx
+│       │   ├── TaskItem.tsx    # Componente individual de tarea
 │       │   └── index.ts
 │       └── organisms/     # Componentes complejos de UI
-│           ├── TaskList.tsx
-│           ├── TaskModal.tsx
+│           ├── TaskList.tsx         # Lista de tareas
+│           ├── TaskModal.tsx        # Modal de tareas
+│           ├── LoadingSpinner.tsx   # Spinner de carga
+│           ├── Pagination.tsx       # Componente de paginación
 │           └── index.ts
 ├── layouts/               # Componentes de estructura general
 │   ├── Header.tsx         # Header principal

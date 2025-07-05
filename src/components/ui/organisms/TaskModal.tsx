@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { BaseModalProps } from '../../types/common.types';
-import { resetForm } from '../../utils/task.utils';
+import { BaseModalProps } from '../../../types/common.types';
+import { resetForm } from '../../../utils/task.utils';
 
 interface TaskModalProps extends BaseModalProps {
   onAddTask: (title: string, description: string) => Promise<boolean>;
