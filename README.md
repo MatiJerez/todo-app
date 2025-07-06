@@ -14,8 +14,9 @@ Aplicación web para la gestión de tareas (TODOs) que permite a los usuarios ve
 ## 🛠️ Stack Tecnológico
 
 -   **Frontend**: [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
--   **Estilos**: [Bootstrap](https://getbootstrap.com/), [SCSS](https://sass-lang.com/)
--   **Cliente HTTP**: [Axios](https://axios-http.com/)
+-   **Estilos**: [React Bootstrap](https://react-bootstrap.github.io/), [Sass](https://sass-lang.com/)
+-   **Cliente HTTP**: [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) nativo
+-   **Enrutamiento**: [React Router](https://reactrouter.com/)
 -   **Herramientas de Desarrollo**: [Create React App](https://create-react-app.dev/), [ESLint](https://eslint.org/)
 
 ## 🚀 Cómo Empezar
