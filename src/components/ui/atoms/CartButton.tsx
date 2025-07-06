@@ -10,6 +10,7 @@ const CartButton: React.FC<CartButtonProps> = ({
   ...props
 }) => {
   // Estado local para el número de items (hardcodeado)
+  // eslint-disable-next-line
   const [itemCount, setItemCount] = useState(4);
 
   return (
